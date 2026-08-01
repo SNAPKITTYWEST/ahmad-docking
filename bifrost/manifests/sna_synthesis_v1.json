@@ -1,0 +1,57 @@
+{
+  "manifest_id": "SNA-STORAGE-v1.0",
+  "operator": "Ahmad_Ali_Parr",
+  "trust": "Bel Esprit D'Accord Irrevocable Trust",
+  "ein": "42-697643",
+  "spec_hash": null,
+  "formal_proofs": {
+    "geometry": "haskell/src/Bio/SNA/Geometry.hs -- LiquidHaskell",
+    "density": "lean/Bio/SNA/Density.lean -- Lean 4 + Mathlib",
+    "codec": "crates/sna-codec/src/lib.rs -- Rust, tested",
+    "decode": "logic/sna_decode.pl -- Prolog CLP(FD)"
+  },
+  "modules": [
+    {
+      "module_id": "SNA-MOD-0001",
+      "coord": [
+        0,
+        0,
+        0
+      ],
+      "core_radius_nm": 10.0,
+      "oligo_length": 60,
+      "target_density": 0.8,
+      "strand_count": 1005,
+      "payload_bytes_per_strand": 24,
+      "total_payload_bytes": 24120,
+      "ecc_scheme": "RS(255,223)_GF256",
+      "primer_scheme": "CANTOR_SPATIAL_v1",
+      "addressing": "cantorPair(cantorPair(x,y),z) -- injective, proven in Lean 4",
+      "correction_capacity": "16 byte errors per strand",
+      "synthesis_qc": {
+        "min_coupling_efficiency": 0.99,
+        "max_truncation_rate": 0.005,
+        "verification_method": "NGS_Deep_Sequencing_1000x"
+      }
+    }
+  ],
+  "retrieval_protocol": {
+    "pcr_primers": "Universal_Forward / Spatial_Reverse",
+    "sequencing": "Illumina_NovaSeq_2x150",
+    "decoder": "sna-codec v0.1.0 (Rust)",
+    "error_budget": "Raw error rate < 2% -> RS correctable (t=16)"
+  },
+  "density_claim": {
+    "params": "r=10nm, l=60, d=0.8",
+    "payload_bits_raw": 48240,
+    "ecc_efficiency": "87.5%",
+    "payload_bits_net": 42210,
+    "fcc_packing": 0.74,
+    "estimated_tb_per_mm3": "~100-388 TB/mm^3",
+    "exabyte_params": "r=5nm, d=1.2 required for 1 EB/mm^3",
+    "lean4_proof": "lean/Bio/SNA/Density.lean -- rs_correction_capacity, reference_payload_bits_per_strand"
+  },
+  "sealed": false,
+  "seal_hash": null,
+  "sealed_at": null
+}
