@@ -1,0 +1,10 @@
+packages: .
+constraints: liquidhaskell ^>= 0.9.2.0,
+             base ^>= 4.18.0.0
+
+ghc-options: -fplugin=LiquidHaskell
+             -fplugin-opt=LiquidHaskell:--no-termination-check
+             -fplugin-opt=LiquidHaskell:--exact-data-con
+             -Wall -Wcompat -Widentities -Wincomplete-record-updates
+             -Wincomplete-uni-patterns -Wmissing-export-lists
+             -Wpartial-fields -Wredundant-constraints
