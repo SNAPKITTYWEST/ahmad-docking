@@ -1,0 +1,31 @@
+{
+  "_doc": "Bifrost WORM audit entry — Bio-Formal Ahmad Docking",
+  "_protocol": "bifrost-audit-v1",
+  "experiment_id":      "BIO-NOCLONE-2026-001",
+  "formal_spec_hash":   null,
+  "prolog_kb_hash":     null,
+  "simulation_hash":    null,
+  "property_verified":  "AG_Mass_Conservation + No_Cloning",
+  "proof_witness":      null,
+  "operator":           "Ahmad_Ali_Parr",
+  "trust":              "Bel Esprit D'Accord Irrevocable Trust",
+  "ein":                "42-697643",
+  "stack": {
+    "layer_1_spec":       "haskell/Bio/Sequence.hs -- LiquidHaskell refinement types",
+    "layer_2_operators":  "logic/bio_ops.pl -- Prolog DCG + CLP(FD)",
+    "layer_3_simulation": "crates/bio-sim/src/reachability.rs -- Rust OBDD state space",
+    "layer_4_proof":      "lean/ -- Lean 4 theorems",
+    "layer_5_audit":      "bifrost-audit.json -- this file, WORM sealed"
+  },
+  "mapping": {
+    "DNA":              "Vec<Nucleotide> refined by isValidDNA",
+    "central_dogma":    "Total functions with mass preservation proofs",
+    "no_cloning":       "Uninhabited type + CTL theorem AG Mass_Conserved",
+    "metabolism":       "Exact EFM enumeration via CLP(FD)",
+    "state_space":      "OBDD symbolic model checking"
+  },
+  "sealed": false,
+  "seal_hash": null,
+  "sealed_at": null,
+  "note": "Seal this file with: bifrost audit seal bifrost-audit.json"
+}
