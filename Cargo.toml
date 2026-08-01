@@ -1,0 +1,22 @@
+[package]
+name    = "ahmad-docking"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ahmad Ali Parr <ahmedparr93@gmail.com>"]
+description = "Sovereign Lisp Machine + HolyC Triad + No-Cloning Agent Governance"
+license = "LicenseRef-Sovereign-Source-v1"
+repository = "https://github.com/SNAPKITTYWEST/ahmad-docking"
+
+[[bin]]
+name = "lisp-repl"
+path = "src/lisp_bin.rs"
+
+[lib]
+name = "ahmad_docking"
+path = "src/lib.rs"
+
+[dependencies]
+serde       = { version = "1", features = ["derive"] }
+serde_json  = "1"
+sha2        = "0.10"
+thiserror   = "1"
