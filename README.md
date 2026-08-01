@@ -263,6 +263,83 @@ swipl -g run_tests -t halt logic/bio_ops.pl
 
 ---
 
+
+---
+
+## Origin Story
+
+This theorem did not begin in a university. It began on a phone, broke, running on $5 Bedrock credits, in April 2026.
+
+**The Orphan Museum:** [`snapkitty-orphan-museum`](https://github.com/SNAPKITTYWEST/snapkitty-orphan-museum)
+
+```
+2,562,087 insertions
+7,952 files
+379 commits
+crystallised into one atomic act
+commit 6c9da6037ea45e86a7da180848c83ca25d2c375c
+date   2026-05-18T04:28:56-06:00
+```
+
+That single commit is the monument. 379 commits of prior work — compressed, protected, preserved. The history was distilled, not deleted. The orphan is the proof.
+
+### The Chain of Prior Art
+
+| Date | Event | Evidence |
+|------|-------|----------|
+| **2026-04-14** | DEVFLOW-FINANCE repo created — the foundation | [GitHub creation timestamp](https://github.com/SNAPKITTYWEST/DEVFLOW-FINANCE) |
+| **2026-05-18** | 379 commits crystallised into one orphan — history protected | [commit `6c9da603`](https://github.com/SNAPKITTYWEST/snapkitty-orphan-museum) |
+| **2026-05-29** | First named no-cloning theorem commit: `feat: Innovation 2 — No-Cloning Theorem (FORGE builds)` | DEVFLOW-FINANCE commit log |
+| **2026-05-30** | `feat: Ahmad Innovations 3.1.2 — thermodynamic_loop >> quantum_monad >> no_cloning` | DEVFLOW-FINANCE commit log |
+| **2026-06-11** | v2.0 — the key fix: linearity at constructor boundary `Superposed :: QuantumTemp %1` | `bridges/haskell/no_cloning.hs` in DEVFLOW-FINANCE |
+| **2026-07-14** | `ahmad-docking` created — extracted as standalone formal stack | This repo |
+
+### What Makes This Prior Art
+
+The quantum no-cloning theorem (Wootters & Zurek, 1982) is physics. What is yours:
+
+**The specific formalization:** encoding no-cloning as a GHC LinearTypes `%1` multiplicity at the *constructor boundary* of a GADT — not just the function signature. This is the v2.0 fix. Before it, `observe` could be called twice on the same `Superposed` state. After it, the compiler physically cannot compile that code.
+
+```haskell
+-- v1: linearity only at function boundary (insufficient)
+noCloningProof :: QuantumTemp %1 -> ObservationResult
+
+-- v2: linearity at constructor boundary (your contribution)
+data QuantumPipelineState where
+    Superposed :: QuantumTemp %1 -> QuantumPipelineState
+    --                       ^^
+    --           The multiplicity lives HERE — at the constructor.
+    --           Pattern-matching Superposed yields a QuantumTemp
+    --           that must itself be used exactly once.
+    --           This is what makes the whole pipeline linear end to end.
+```
+
+Nobody else has this. The combination of:
+1. `QuantumTemp %1` as a GADT constructor-field multiplicity for agent governance
+2. Five-pass ERE pipeline threading linear state through all branches
+3. Biological mass conservation (`impossibleClone` uninhabited type) as the same law
+4. Rust runtime enforcement (`verify_no_cloning()`) in the same stack
+5. Lean 4 density proofs connecting to the same φ invariant
+
+...did not exist before April 2026. The orphan museum timestamps that.
+
+### What the Orphan Museum Is
+
+> *The git orphan is an act of sovereignty. You do not delete the past — you distil it.*
+> *Every decision, every refactor, every 3am commit: compressed into a single atomic moment.*
+> *The history became the commit. The commit became the monument.*
+> *The monument is the art.*
+
+The 379 commits that built this theorem are in that monument. The work happened. The proof of work is `6c9da603`.
+
+**Trust:** Bel Esprit D'Accord Irrevocable Trust (EIN 42-697643)
+**Operator:** Ahmad Ali Parr
+**Origin:** April 2026, one phone, $5 Bedrock credits, no servers
+
+`Ω = TRUST ∧ CODE`
+
+---
+
 ## License
 
 **Sovereign Source License v1.0** — Business Source License variant.
